@@ -115,7 +115,32 @@ window.addEventListener("scroll", function () {
       alert(`You have ${cartCount} item(s) in your cart.`);
     }
 
+// Function to toggle the mobile navigation menu
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
 
+// Function to check screen width and enable/disable toggle
+function handleMobileMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (window.innerWidth <= 768) {
+    // Enable toggle functionality for mobile view
+    hamburger.addEventListener('click', toggleMenu);
+  } else {
+    // Disable toggle functionality for desktop view
+    hamburger.removeEventListener('click', toggleMenu);
+    navLinks.classList.remove('active'); // Ensure menu is closed on desktop
+  }
+}
+
+// Initial check on page load
+handleMobileMenu();
+
+// Re-check on window resize
+window.addEventListener('resize', handleMobileMenu);
 
   
   });
