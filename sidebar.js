@@ -52,7 +52,7 @@ function updateCartUI() {
     cartItem.classList.add('cart-item');
 
     cartItem.innerHTML = `
-      <img src="images/desert${index + 1}.jpg" alt="${item.name}">
+      <img src="desert${index + 1}.jpg" alt="${item.name}">
       <div class="item-details">
         <h4>${item.name}</h4>
         <p>$${item.price.toFixed(2)}</p>
